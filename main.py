@@ -161,7 +161,7 @@ def updateProductDetails():
         
         for key,value in allFields:
             if key != 'product_id':
-                productID[key] = value
+                updateProduct[key] = value
 
         updateProductAllFields(productID= productID, **updateProduct)
 
@@ -170,8 +170,6 @@ def updateProductDetails():
     except Exception as e:
         return jsonify({"status" : 400 , "message" : str(e)})
 
-# update order details
-# get specific order
 
 @app.route("/updateOrderDetails", methods=['PATCH'])
 def updateOrderDetails():
@@ -185,7 +183,7 @@ def updateOrderDetails():
         
         for key,value in allFields:
             if key != 'orderID':
-                orderID[key] = value
+                updateOrder[key] = value
 
         updateOrderAllFields(orderID=orderID, **updateOrder)
         
